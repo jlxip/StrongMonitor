@@ -1,0 +1,25 @@
+{
+	"DB": {
+		"host": "localhost",
+		"user": "strongmonitor",
+		"database": "strongmonitor"
+	},
+	"ban_command": "sudo /opt/banIP.sh %s",
+	"modules": {
+		"SSHD": {
+			"no_log": [
+				"Disconnected from",
+				"Received disconnect",
+				"Connection closed"
+			],
+			"rules": [
+				{
+					"name": "invalid_user",
+					"mode": "start",
+					"str": "Invalid user",
+					"limit": 10
+				}
+			]
+		}
+	}
+}

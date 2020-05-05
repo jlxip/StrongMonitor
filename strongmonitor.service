@@ -1,0 +1,13 @@
+[Unit]
+Description=StrongMonitor
+
+[Service]
+WorkingDirectory=/opt/StrongMonitor/
+User=sysadmin
+Type=simple
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/StrongMonitor/strongmonitor.py
+
+[Install]
+WantedBy=multi-user.target
